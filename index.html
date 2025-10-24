@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>MONITORING SYSTEM  (REALTIME)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+  <body>
+    <div id="loginScreen" class="login-container">
+      <h2 style="color: white;">LOGIN</h2>
+      <input type="text" id="loginUser" placeholder="Username">
+      <input type="password" id="loginPass" placeholder="Password">
+      <button id="loginBtn">MASUK</button>
+      <p id="loginError" class="error-msg"></p>
+      
+    </div>
+
+    <div id="mainUI" class="hidden">
+      <!-- <h2 style="color: black;">localStorage.clear()</h2>  -->
+      <div class="FULL-ITEM-UI">
+        <h1>MONITORING SYSTEM<br>REALTIME</h1>
+        <div class="status-wrapper">
+          <div id="statusMqtt" class="status disconnected">MQTT: Disconnected</div>
+          <div id="statusESP" class="status disconnected">ESP Disconnected</div>
+        </div>
+        <button id="logoutBtn" class="Logout_Buttom">Logout</button>
+        <div class="plant-layout">
+            <div class="tank">
+            <div id="airLevel" class="water"></div>
+            <div class="pipe_1"></div>
+          </div>
+        </div>
+      
+        <div class="In_Panel">
+          <div class="sprayer_box">
+            <div class="teks_5">SPRAYER</div>
+            <div id="statusSprayer" class="disconnected">Sprayer OFF</div>
+            <div id="sprayerTimer">Timer: -</div>
+            <button id="Sprayer_Toggle" class="sprayer-btn off">OFF</button>
+          </div>
+          <div class="blower_box">
+            <div class="teks_6">BLOWER</div>
+            <button id="Blower_On">ON</button>
+            <button id="Blower_Off">OFF</button>
+            <div id="statusBlower" class="status disconnected">Blower OFF</div>
+          </div>
+          <div class="Pressure_box">
+            <div class="teks_7">PRESSURE</div>
+            <div id="pressure_PSI" class="pressure-PSI"></div>
+          </div>
+          <div class="ultra_box">
+            <div class="teks_8">BACTERIA TANK</div>
+            <div id="infoAir" class="infoAir">Menunggu data...</div>  
+          </div>
+          <div id="activeUsers">
+            <div class="text_user">ON USER :</div>
+            <ul id="userList"></ul>
+          </div>
+          <div class="note_panel">
+            <div class="text_note">NOTE</div>
+            <div class="text_in_note">Please pay attention to the notes. <br><br> If the status is `ESP Connected` but the system does not work within 5 minutes, refresh the page. <br> <br> If no active users appear in the `ON USER` table within 5 minutes, refresh the page. <br> <br> Once monitoring and control are complete, please log out.</div>
+          </div>
+        </div>
+        
+        <div class="gas-tank">
+          <div id="pressureDiv" class="Gas_view"></div>
+          <div class="pipe_2"></div>
+          <div class="pipe_3"></div>
+        </div>
+        <div class="teks_1">BACTERIA TANK</div>
+        <div class="teks_2">GAS TANK</div>
+        <div class="teks_4">OUTPUT GAS</div>
+        <div class="display_user">
+          <div id="userInfo"><span id="usernameDisplay"></span></div>
+        </div>
+        <div class="panel">
+          <div class="pipe_4"></div>
+          <div class="teks_3">PANEL</div>
+          <div class="pipe_5"></div> 
+          <div class="line_1"></div>
+          <div class="bayangan"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+  
+
+  <script>
+  </script>
+
+</html>
